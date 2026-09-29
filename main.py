@@ -3,7 +3,6 @@ import os
 import io
 
 from fastapi import FastAPI, Depends, HTTPException, status, UploadFile, File, Form
-app = FastAPI()
 from fastapi.responses import HTMLResponse, StreamingResponse
 from pydantic import BaseModel
 from sqlalchemy import (
@@ -12,6 +11,7 @@ from sqlalchemy import (
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 import uvicorn
+app = FastAPI()
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./unified_contract_master.db"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
