@@ -3,6 +3,7 @@ import os
 import io
 
 from fastapi import FastAPI, Depends, HTTPException, status, UploadFile, File, Form
+app = FastAPI()
 from fastapi.responses import HTMLResponse, StreamingResponse
 from pydantic import BaseModel
 from sqlalchemy import (
