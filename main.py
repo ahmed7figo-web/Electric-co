@@ -74,3 +74,8 @@ class FieldPettyCash(Base):
     advance_amount = Column(Float, default=0.0)                # قيمة العهدة المسلمة (ريال)
     spent_amount = Column(Float, default=0.0)                  # المبلغ المنصرف على المصروفات
     expense_desc = Column(Text, nullable=True)                 # بيان المصروف (و 
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
